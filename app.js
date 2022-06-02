@@ -1,21 +1,27 @@
-const express = require('express');
-const app = express();
-const path = require('path');
+const express= require('express');
+const app= express();
+const path=require("path");
+app.use(express.static('public'));
+app.use(express.urlencoded({extended:false}))
 
-const public = path.join(__dirname, './public');
-app.use(express.static(public))
+const directory=path.join(__dirname,"/public");
 
-app.get("/",function(req, res){
-    res.sendFile(path.join(__dirname,"./views/home.html"));
+app.listen(process.env.PORT || 3030,()=>{
+    console.log("funcionando")
+});
+
+
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/views/home.html"))
 })
-app.get("/login",function(req, res){
-    res.sendFile(path.join(__dirname,"./views/login.html"));
+
+app.get("/Login",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/views/login.html"))
 })
-app.get("/register",function(req, res){
-    res.sendFile(path.join(__dirname,"./views/registro.html"));
+app.get("/register",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/views/registro.html"))
 })
 
-
-app.listen(process.env.PORT || 8080, function() {
-    console.log("el servidor esta corriendo");
-}) 
+app.post('/datos', (req,res) =>{
+    res.send(req.body)
+})

@@ -1,9 +1,5 @@
 {
-  "dependencies": {
-    "express": "^4.18.1",
-    "init": "^0.1.2"
-  },
-  "name": "mercado-liebre",
+  "name": "mercadoliebre",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -11,5 +7,19 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilaMorand251/Mercado_liebre"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/CamilaMorand251/Mercado_liebre/issues"
+  },
+  "homepage": "https://github.com/CamilaMorand251/Mercado_liebre#readme",
   "description": ""
 }
